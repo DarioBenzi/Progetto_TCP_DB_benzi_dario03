@@ -11,7 +11,8 @@ while True:
     print("Received:", data)
     if data == "Uscita dal programma...":
         break
-    mess = input("Inserisci: ").encode()
+    if data != "Dati modificati" and data[0:1] != "(":
+        mess = input("Inserisci: ").encode()
     s.send(mess)
 
 s.close()
